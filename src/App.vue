@@ -1,15 +1,21 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <a href="/">首页</a>
+  <button type="button" @click="gotoAutoFocusView">自动聚焦测试</button>
+  <button type="button" @click="gotoCounterView">自动播报测试</button>
+  <router-view></router-view>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  methods: {
+    gotoAutoFocusView() {
+      this.$router.push('/autofocus');
+    },
+    gotoCounterView() {
+      this.$router.push('/counter');
+    }
   }
 }
 </script>
